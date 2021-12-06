@@ -1,3 +1,4 @@
+// https://codeforces.com/group/PVbQ8eK2T4/contest/350943/submission/135870995
 /*
 Нужно отвечать на запросы вида
 • + x
