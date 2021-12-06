@@ -1,3 +1,4 @@
+// https://codeforces.com/group/PVbQ8eK2T4/contest/347382/submission/135512960
 /*
 Отсортируйте данную последовательность, используя алгоритм быстрой сортировки QuickSort.
 
