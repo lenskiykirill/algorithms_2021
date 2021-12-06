@@ -1,3 +1,4 @@
+// https://codeforces.com/group/PVbQ8eK2T4/contest/350943/submission/134502713
 /*
 Реализуйте структуру данных из n элементов a1, a2 … an, поддерживающую следующие операции:
 
