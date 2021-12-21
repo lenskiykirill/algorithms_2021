@@ -104,21 +104,19 @@ template <class T, class C>
             size_t left = 0;
             size_t right = size;
 
-            if (size == 1)
-                  return 0;
-
             while (right - left > 1) {
-                  size_t middle = left + __quick_middle (array+left, right-left, is_less);
+                  size_t middle = __quick_middle (array+left, right-left, is_less);
+                  middle = left + __quick_partition<T, C> (array+left, right-left, middle, is_less);
 
-                  if (k < middle) {
-                        right = middle;
+                  if (k < middle+1) {
+                        right = middle+1;
                         continue;
                   }
-
+/*
                   if (middle == left)
                         return left;
-
-                  left = middle;
+*/
+                  left = middle+1;
             }
 
             return left;
