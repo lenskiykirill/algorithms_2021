@@ -97,6 +97,33 @@ template <class T, class C>
 		return size / 2;
 	}
 
+
+template <class T, class C>
+      size_t __quick_select (T* array, size_t size, size_t k, C is_less) {
+            
+            size_t left = 0;
+            size_t right = size;
+
+            if (size == 1)
+                  return 0;
+
+            while (right - left > 1) {
+                  size_t middle = left + __quick_middle (array+left, right-left, is_less);
+
+                  if (k < middle) {
+                        right = middle;
+                        continue;
+                  }
+
+                  if (middle == left)
+                        return left;
+
+                  left = middle;
+            }
+
+            return left;
+      }
+/*
 template <class T, class C>
 	size_t __quick_select (T* array, size_t size, size_t k, C is_less) {
 		
@@ -114,6 +141,7 @@ template <class T, class C>
 
 		return __quick_select (&array[middle+1], size-middle-1, k-middle-1, is_less) + middle + 1;
 	}
+// */
 
 template <class T, class C = __cmp_default<T>>
 	const T& quick_select (T* array, size_t size, size_t k, C is_less = __cmp_default<T>()) {
@@ -134,6 +162,8 @@ long long* array = new long long [N];
 for (int i=0; i < N; i++) {
 	scanf("%lld", &array[i]);
 }
+
+//printf("Here\n");
 
 printf("%lld\n", dst::quick_select(array, N, k));
 
